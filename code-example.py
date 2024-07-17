@@ -14,7 +14,11 @@ def divide(a, b):
     if b != 0:
         return a / b
     else:
-        return None
+        raise ValueError("Division by zero is not allowed")
+
+
+def modulus(a, b):
+    return a % b
 
 
 def main():
@@ -22,6 +26,7 @@ def main():
     print("Subtraction:", subtract(10, 5))
     print("Multiplication:", multiply(10, 5))
     print("Division:", divide(10, 5))
+    print("Modulus:", modulus(10, 5))
 
 
 if __name__ == "__main__":

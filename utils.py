@@ -10,6 +10,7 @@ def summarize_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     - Basic statistics for numeric columns
     - Unique value counts for categorical columns
     - Missing value counts for all columns
+    - Sample values for each column
 
     Parameters:
     df (pd.DataFrame): The input DataFrame to summarize
@@ -24,6 +25,7 @@ def summarize_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     null_counts = []
     unique_counts = []
     numeric_stats = []
+    sample_values = []
 
     for col in df.columns:
         columns.append(col)
@@ -39,6 +41,10 @@ def summarize_dataframe(df: pd.DataFrame) -> pd.DataFrame:
         else:
             numeric_stats.append("N/A")
 
+        # Add sample values
+        sample = df[col].dropna().sample(n=min(3, df[col].count())).tolist()
+        sample_values.append(str(sample))
+
     # Create summary DataFrame
     summary_df = pd.DataFrame(
         {
@@ -48,6 +54,7 @@ def summarize_dataframe(df: pd.DataFrame) -> pd.DataFrame:
             "Null Count": null_counts,
             "Unique Values": unique_counts,
             "Numeric Stats": numeric_stats,
+            "Sample Values": sample_values,
         }
     )
 

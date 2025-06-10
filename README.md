@@ -14,7 +14,7 @@ This is a demo repository to showcase the ability to diff different types of fil
 
 ## Example Files
 
-- `code-example.py`: Contains basic math functions like add, substract, multiply, divide, and modulus.
+- `code-example.py`: Contains basic math functions like add, subtract, multiply, divide, and modulus.
 - `pandas-example.ipynb`: Shows how to do operations on pandas DataFrames and Series, and includes some random data.
 
 ## How to Use
@@ -23,8 +23,7 @@ Just browse the files and make some changes. You can try to add new functions, f
 
 ## Known Issues
 
-- Sometimes the notebook outputs are not shown in the diff.
-- There may be some spelling errors in the code and markdowns.
+- There may be some spelling errors in the code and markdown.
 - The code is not tested for all edge cases.
 
 Enjoy exploring the repo!
